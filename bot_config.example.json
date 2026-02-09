@@ -1,0 +1,65 @@
+{
+  "welcome_message": "🤖 Bienvenue {user_name} !\n\nPour accéder au contenu exclusif, vous devez d'abord vous abonner à notre canal :\n\n📢 Canal : {canal}\n\n👇 Cliquez sur les boutons ci-dessous",
+  "verified_message": "✅ Parfait {user_name} !\n\nVous êtes bien abonné au canal {canal}\n\nVous pouvez maintenant accéder au contenu du bot ! 🎉",
+  "not_verified_message": "❌ Désolé {user_name}...\n\nVous n'êtes pas encore abonné au canal {canal}\n\n👉 Veuillez vous abonner au canal, puis cliquez sur \"Vérifier à nouveau\"",
+  "menus": {
+    "main_menu": {
+      "name": "Menu Principal",
+      "message": "📋 **MENU PRINCIPAL**\n\nChoisissez une option :",
+      "buttons": [
+        {
+          "text": "📚 Voir le contenu",
+          "type": "callback",
+          "data": "show_content"
+        },
+        {
+          "text": "🎯 Nos services",
+          "type": "callback",
+          "data": "services_menu"
+        },
+        {
+          "text": "🌐 Notre site web",
+          "type": "url",
+          "url": "https://votre-site.com"
+        },
+        {
+          "text": "💬 Support",
+          "type": "url",
+          "url": "https://t.me/votre_support"
+        }
+      ]
+    },
+    "services_menu": {
+      "name": "Services",
+      "message": "🎯 **NOS SERVICES**\n\nQue voulez-vous savoir ?",
+      "buttons": [
+        {
+          "text": "💼 Service 1",
+          "type": "callback",
+          "data": "service_1"
+        },
+        {
+          "text": "🎨 Service 2",
+          "type": "callback",
+          "data": "service_2"
+        },
+        {
+          "text": "📞 Contact",
+          "type": "callback",
+          "data": "contact_info"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "show_content": "📚 **NOTRE CONTENU**\n\nVoici tout le contenu exclusif disponible pour nos abonnés :\n\n• Article 1\n• Article 2\n• Article 3\n• Vidéo exclusive\n• Ressources PDF\n\nProfitez-en ! 🎉",
+    "service_1": "💼 **SERVICE 1**\n\nDescription complète du service 1...\n\nPrix : 50€/mois\n\nPour commander, contactez @votre_support",
+    "service_2": "🎨 **SERVICE 2**\n\nDescription complète du service 2...\n\nPrix : 75€/mois\n\nPour commander, contactez @votre_support",
+    "contact_info": "📞 **CONTACT**\n\nVous pouvez nous joindre :\n\n• Telegram : @votre_support\n• Email : contact@votre-site.com\n• Site : https://votre-site.com\n\nNous répondons sous 24h ! 💬"
+  },
+  "stats": {
+    "total_users": 0,
+    "verified_users": 0
+  },
+  "users": []
+}
