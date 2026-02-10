@@ -150,6 +150,15 @@ async def verifier_abonnement(user_id: int, context: ContextTypes.DEFAULT_TYPE) 
 
 # ==================== COMMANDES ====================
 
+async def admin_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Commande /admin pour accéder au panel admin"""
+    if not is_admin(update):
+        await update.message.reply_text("❌ Accès refusé - Vous n'êtes pas administrateur")
+        return
+    
+    await show_admin_panel(update, context)
+
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user = update.effective_user
     
@@ -174,7 +183,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     )
     
     keyboard = [
-        [InlineKeyboardButton("📢 S'abonner", url=f"https://t.me/{CANAL_REQUIS.replace('@', '')}")],
+        [InlineKeyboardButton(f"📢 S'abonner à {CANAL_REQUIS}", url=f"https://t.me/{CANAL_REQUIS.replace('@', '')}")],
         [InlineKeyboardButton("✅ Vérifier", callback_data='verifier')]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -235,7 +244,7 @@ async def verifier_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) 
         )
         
         keyboard = [
-            [InlineKeyboardButton("📢 S'abonner", url=f"https://t.me/{CANAL_REQUIS.replace('@', '')}")],
+            [InlineKeyboardButton(f"📢 S'abonner à {CANAL_REQUIS}", url=f"https://t.me/{CANAL_REQUIS.replace('@', '')}")],
             [InlineKeyboardButton("🔄 Réessayer", callback_data='verifier')]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
@@ -588,6 +597,7 @@ def main() -> None:
     
     # Handlers
     application.add_handler(CommandHandler("start", start))
+    application.add_handler(CommandHandler("admin", admin_command))  # COMMANDE /admin
     application.add_handler(CommandHandler("debug", debug_command))  # NOUVELLE COMMANDE DEBUG
     application.add_handler(conv_handler)
     application.add_handler(CallbackQueryHandler(callback_router))
