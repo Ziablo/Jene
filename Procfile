@@ -1,1 +1,1 @@
-worker: python telegram_bot_debug.py
+worker: telegram_bot_full_admin.py
