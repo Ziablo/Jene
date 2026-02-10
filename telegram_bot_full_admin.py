@@ -24,7 +24,7 @@ from telegram.ext import (
 
 # Configuration
 BOT_TOKEN = os.getenv('BOT_TOKEN', "7553192698:AAGU4yYCTjYJ5iVYVtbMREKIDbLbZZ6cb7s")
-CANAL_REQUIS = os.getenv('CANAL_REQUIS', "@votre_canal")
+CANAL_REQUIS = os.getenv('CANAL_REQUIS', "@ziablowcontent")
 
 # Admin - PLUSIEURS FORMATS POUR ÊTRE SÛR
 ADMIN_USERNAME = "grandjd"  # Sans @
